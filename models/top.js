@@ -6,7 +6,7 @@ const TopSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must provide name of top'],
         trim: true,
-        maxlength: [20, 'Name cannot be more than 20 characters']
+        maxlength: [30, 'Name cannot be more than 20 characters']
     },
     style: {
         type: String,

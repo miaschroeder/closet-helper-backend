@@ -20,7 +20,43 @@ const createTop = async (req, res) => {
     }
 };
 
+const getSingleTop = async (req, res) => {
+    const { id:topID } = req.params;
+    try {
+        const top = await Top.findOne({ _id:topID});
+        res.status(200).json({top});
+    } catch (err) {
+        res.status(500).json({ msg:err });
+    }
+};
+
+const updateTop = async (req, res) => {
+    const { id:topID } = req.params;
+    try {
+        const top = await Top.findOneAndUpdate({ _id:topID}, req.body, {
+            new: true,
+            runValidators: true
+        });
+        res.status(200).json({top});
+    } catch (err) {
+        res.status(500).json({err});
+    }
+};
+
+const deleteTop = async (req, res) => {
+    const { id:topID } = req.params;
+    try {
+        const top = await Top.findOneAndDelete({_id:topID});
+        res.status(200).json({top});
+    } catch (err) {
+        res.status(500).json({err});
+    }
+};
+
 module.exports = {
     getAllTops,
     createTop,
+    getSingleTop,
+    updateTop,
+    deleteTop
 };
