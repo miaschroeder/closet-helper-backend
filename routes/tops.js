@@ -8,10 +8,10 @@ const {
     deleteTop,
 } = require('../controllers/tops');
 
-router.get('/tops', getAllTops);
-router.post('/tops', createTop);
-router.get('/tops/:id', getSingleTop);
-router.patch('/tops/:id', updateTop);
-router.delete('/tops/:id', deleteTop);
+router.get('/', getAllTops);
+router.post('/', createTop);
+router.get('/:id', getSingleTop);
+router.patch('/:id', updateTop);
+router.delete('/:id', deleteTop);
 
 module.exports = router;
