@@ -5,9 +5,11 @@ const tops = require('./routes/tops');
 const bottoms = require('./routes/bottoms');
 const outerwear = require('./routes/outerwear');
 require('dotenv').config();
+const cors = require('cors');
 
 
 app.use(express.json());
+app.use(cors());
 app.use('/api/v1/tops', tops);
 app.use('/api/v1/bottoms', bottoms);
 app.use('/api/v1/outerwear', outerwear);
