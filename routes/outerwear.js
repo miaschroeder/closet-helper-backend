@@ -8,7 +8,7 @@ const {
     deleteOuterwear,
 } = require('../controllers/outerwear');
 
-router.get('/', getAllOuterwear);
+router.get('/:style/:sorted', getAllOuterwear);
 router.post('/', createOuterwear);
 router.get('/:id', getSingleOuterwear);
 router.patch('/:id', updateOuterwear);

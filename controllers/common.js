@@ -3,7 +3,27 @@
 const getAllItems = (model) => {
     return async (req, res) => {
         try {
-            const items = await model.find({});
+            const { style, sorted } = req.params;
+            let items = await model.find({});
+
+            if ( style !== "none" ) {
+                items = items.filter((item) => {
+                    return item.style === style;
+                })
+            };
+
+            if ( JSON.parse(sorted) ) {
+                items.sort((item1, item2 ) => {
+                    if ( item1.favorite && !item2.favorite ) {
+                        return -1;
+                    } else if ( !item1.favorite && item2.favorite ) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }) 
+            };
+
             res.status(200).json({items});
         } catch (err) {
             res.status(500).json({ msg: err });

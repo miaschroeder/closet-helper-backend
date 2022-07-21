@@ -8,7 +8,7 @@ const {
     deleteTop,
 } = require('../controllers/tops');
 
-router.get('/', getAllTops);
+router.get('/:style/:sorted', getAllTops);
 router.post('/', createTop);
 router.get('/:id', getSingleTop);
 router.patch('/:id', updateTop);

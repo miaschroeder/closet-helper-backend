@@ -8,7 +8,7 @@ const {
     deleteBottom,
 } = require('../controllers/bottoms');
 
-router.get('/', getAllBottoms);
+router.get('/:style/:sorted', getAllBottoms);
 router.post('/', createBottom);
 router.get('/:id', getSingleBottom);
 router.patch('/:id', updateBottom);
