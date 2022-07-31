@@ -6,7 +6,7 @@ and user preferences.
 
 ## How It Works
 
-Built with NodeJs, Express, and Mongoose, the backend of Closet Helper facilitates requests from the frontend to create, read, edit,
+Built with Node.js, Express, and Mongoose, the backend of Closet Helper facilitates requests from the frontend to create, read, edit,
 and delete clothing items from three clothing collections in MongoDB, which represent clothing categories of tops, bottoms, and outerwear.
 
 ## Contributors
